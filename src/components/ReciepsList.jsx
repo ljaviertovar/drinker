@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Reciep from './Reciep';
+
+import { ReciepContext } from '../context/ReciepContext'
 
 const ReciepsList = () => {
-    return ( 
 
-        <h1>Lista</h1>
+    const { recieps } = useContext(ReciepContext);
 
-     );
+    return (
+
+        <div className="row mt-5">
+            {recieps.map(reciep => (
+                <Reciep
+                    key={reciep.idDrink}
+                    reciep={reciep}
+                />
+            ))}
+        </div>
+
+    );
 }
- 
+
 export default ReciepsList;

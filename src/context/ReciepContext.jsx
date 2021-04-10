@@ -35,6 +35,7 @@ const ReciepProvider = (props) => {
 
         <ReciepContext.Provider
             value={{
+                recieps,
                 setSearchRecieps,
                 setConsult
             }}

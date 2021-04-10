@@ -5,22 +5,25 @@ import ReciepsList from './components/ReciepsList';
 
 import CategoriesProvider from './context/CategoriesContext';
 import ReciepProvider from './context/ReciepContext';
+import ModalProvider from './context/ModalContext';
 
 function App() {
   return (
     <CategoriesProvider>
       <ReciepProvider>
+        <ModalProvider>
 
-        <Header />
+          <Header />
 
-        <div className="container mt-5">
-          <div className="row">
-            <Form />
+          <div className="container mt-5">
+            <div className="row">
+              <Form />
+            </div>
           </div>
-        </div>
 
-        <ReciepsList />
+          <ReciepsList />
 
+        </ModalProvider>
       </ReciepProvider>
     </CategoriesProvider>
   );
