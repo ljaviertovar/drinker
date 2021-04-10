@@ -11,7 +11,7 @@ const Form = () => {
     });
 
     const { categories } = useContext(CategoriesContext);
-    const { setSearchRecieps } = useContext(ReciepContext);
+    const { setSearchRecieps, setConsult } = useContext(ReciepContext);
 
     const getDataReciep = e => {
         setSearching({
@@ -27,6 +27,7 @@ const Form = () => {
             onSubmit = { e => {
                 e.preventDefault();
                 setSearchRecieps(searching);
+                setConsult(true);
             }}
         >
             <fieldset className="text-center">

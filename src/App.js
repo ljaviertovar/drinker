@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
+import ReciepsList from './components/ReciepsList';
 
 import CategoriesProvider from './context/CategoriesContext';
 import ReciepProvider from './context/ReciepContext';
@@ -17,6 +18,8 @@ function App() {
             <Form />
           </div>
         </div>
+
+        <ReciepsList />
 
       </ReciepProvider>
     </CategoriesProvider>
