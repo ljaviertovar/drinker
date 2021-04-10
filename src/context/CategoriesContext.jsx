@@ -16,7 +16,7 @@ const CategoriesProvaider = (props) => {
 
             const url = `https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`;
             const resp = await axios.get(url);
-console.log(resp)
+
             setCategories(resp.data.drinks);
 
         }

@@ -1,15 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+
 import { CategoriesContext } from '../context/CategoriesContext';
+import { ReciepContext } from '../context/ReciepContext';
 
 const Form = () => {
 
-    const { categories } = useContext(CategoriesContext);
+    const [searching, setSearching] = useState({
+        name: '',
+        category: ''
+    });
 
+    const { categories } = useContext(CategoriesContext);
+    const { setSearchRecieps } = useContext(ReciepContext);
+
+    const getDataReciep = e => {
+        setSearching({
+            ...searching,
+            [e.target.name] : e.target.value
+        })
+    }
 
     return (
 
         <form
             className="col-12"
+            onSubmit = { e => {
+                e.preventDefault();
+                setSearchRecieps(searching);
+            }}
         >
             <fieldset className="text-center">
                 <legend>Search by category or ingredients</legend>
@@ -22,12 +40,14 @@ const Form = () => {
                         name="name"
                         type="text"
                         placeholder="Search by Ingredients"
+                        onChange= {getDataReciep}
                     />
                 </div>
                 <div className="col-md-4">
                     <select
                         className="form-control"
                         name="category"
+                        onChange= {getDataReciep}
                     >
                         <option vlaiue="">-- Select category --</option>
                         {categories.map(category => (
