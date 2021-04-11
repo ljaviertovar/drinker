@@ -43,6 +43,22 @@ const Reciep = ({ reciep }) => {
 
     const { setIdReciep, detailReciep, setDetailReciep } = useContext(ModalContext);
 
+    const showIngredients = dataReciep => {
+        let ingredients = [];
+
+        for (let i = 1; i < 16; i++) {
+
+            if (dataReciep[`strIngredient${i}`]) {
+                ingredients.push(
+                    <li>{dataReciep[`strIngredient${i}`]} {dataReciep[`strMeasure${i}`]}</li>
+                )
+            }
+
+        }
+
+        return ingredients;
+    }
+
     return (
 
         <div className="col-md-4 mb-3">
@@ -77,7 +93,11 @@ const Reciep = ({ reciep }) => {
                             <p>
                                 {detailReciep.strInstructions}
                             </p>
-                            <img className="img-fluid my-4" src={detailReciep.strDrinkThumb} alt={`Image of ${detailReciep.strDrink}`}/>
+                            <img className="img-fluid my-4" src={detailReciep.strDrinkThumb} alt={`Image of ${detailReciep.strDrink}`} />
+                            <h3>Ingredients and Measure</h3>
+                            <ul>
+                                {showIngredients(detailReciep)}
+                            </ul>
                         </div>
                     </Modal>
                 </div>
