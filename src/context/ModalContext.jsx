@@ -29,7 +29,9 @@ const ModalProvider = (props) => {
 
         <ModalContext.Provider
             value={{
-                setIdReciep
+                detailReciep,
+                setIdReciep,
+                setDetailReciep
             }}
         >
             {props.children}
