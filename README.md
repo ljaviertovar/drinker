@@ -7,7 +7,7 @@ App to search for reciep drinks
 :heavy_check_mark: [TheCocktailDB API](https://www.thecocktaildb.com])
 
 ### :small_blue_diamond: Front-end
-:heavy_check_mark: React js
+:heavy_check_mark: React js \
 :heavy_check_mark: Material UI
 
 <hr>
